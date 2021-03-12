@@ -3,13 +3,22 @@ package com.serenitydojo.model;
 public class Feeder {
 
     public String feeds(String animal, boolean isPremium) {
-        if(animal.equals("Cat")) {
-            return (isPremium) ? "Salmon" : "Tuna";
+
+        String food;
+        switch (animal) {
+            case "Cat":
+                food = (isPremium) ? "Salmon" : "Tuna";
+                break;
+            case "Dog":
+                food = (isPremium) ? "Premium Dog Food" : "Bone";
+                break;
+            case "Hamster":
+                food = (isPremium) ? "Lettuce" : "Cabbage";
+                break;
+            default:
+                food = "Unknown animal - Unknown food!";
         }
-        else if (animal.equals("Hamster")){
-            return "Cabbage";
-        }
-        else
-            return "Bone";
+
+        return food;
     }
 }
