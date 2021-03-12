@@ -9,27 +9,27 @@ public class WhenCreatingObjects {
     public void creating_a_dog(){
         Dog fido = new Dog("Fido", 5, "Bone");
 
-        Assert.assertEquals(fido.getName(),"Fido");
-        Assert.assertEquals(fido.getFavoriteToy(),"Bone");
-        Assert.assertEquals(fido.getAge(),5);
+        Assert.assertEquals("Fido", fido.getName());
+        Assert.assertEquals("Bone", fido.getFavoriteToy());
+        Assert.assertEquals(5, fido.getAge());
     }
 
     @Test
     public void creating_a_cat(){
         Cat felix = new Cat("Felix", 4, "Tuna");
 
-        Assert.assertEquals(felix.getName(), "Felix");
-        Assert.assertEquals(felix.getAge(), 4);
-        Assert.assertEquals(felix.getFavoriteFood(), "Tuna");
+        Assert.assertEquals("Felix", felix.getName());
+        Assert.assertEquals(4, felix.getAge());
+        Assert.assertEquals("Tuna", felix.getFavoriteFood());
     }
 
     @Test
     public void creating_a_hamster(){
         Hamster rusty = new Hamster("Rusty", 1, "Wheel");
 
-        Assert.assertEquals(rusty.getName(), "Rusty");
-        Assert.assertEquals(rusty.getAge(), 1);
-        Assert.assertEquals(rusty.getFavoriteGame(), "Wheel");
+        Assert.assertEquals("Rusty", rusty.getName());
+        Assert.assertEquals(1, rusty.getAge());
+        Assert.assertEquals("Wheel", rusty.getFavoriteGame());
     }
 
     @Test
@@ -38,9 +38,9 @@ public class WhenCreatingObjects {
         Pet fido = new Dog("Fido",5, "bone");
         Pet rusty = new Hamster("Rusty", 1, "wheels");
 
-        Assert.assertEquals(felix.play(), "plays with string");
-        Assert.assertEquals(fido.play(), "plays with bone");
-        Assert.assertEquals(rusty.play(), "runs in wheel");
+        Assert.assertEquals("plays with string", felix.play());
+        Assert.assertEquals("plays with bone", fido.play());
+        Assert.assertEquals("runs in wheel", rusty.play());
 
     }
 
