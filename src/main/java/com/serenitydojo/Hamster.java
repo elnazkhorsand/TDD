@@ -12,4 +12,9 @@ public class Hamster extends Pet {
     public String getFavoriteGame() {
         return favoriteGame;
     }
+
+    @Override
+    public String play() {
+        return "runs in wheel";
+    }
 }

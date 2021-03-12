@@ -16,20 +16,32 @@ public class WhenCreatingObjects {
 
     @Test
     public void creating_a_cat(){
-        Cat kitty = new Cat("Kitty", 3, "Tuna");
+        Cat felix = new Cat("Felix", 4, "Tuna");
 
-        Assert.assertEquals(kitty.getName(), "Kitty");
-        Assert.assertEquals(kitty.getAge(), 3);
-        Assert.assertEquals(kitty.getFavoriteFood(), "Tuna");
+        Assert.assertEquals(felix.getName(), "Felix");
+        Assert.assertEquals(felix.getAge(), 4);
+        Assert.assertEquals(felix.getFavoriteFood(), "Tuna");
     }
 
     @Test
     public void creating_a_hamster(){
-        Hamster hami = new Hamster("Hami", 2, "Hide & Seek");
+        Hamster rusty = new Hamster("Rusty", 1, "Wheel");
 
-        Assert.assertEquals(hami.getName(), "Hami");
-        Assert.assertEquals(hami.getAge(), 2);
-        Assert.assertEquals(hami.getFavoriteGame(), "Hide & Seek");
+        Assert.assertEquals(rusty.getName(), "Rusty");
+        Assert.assertEquals(rusty.getAge(), 1);
+        Assert.assertEquals(rusty.getFavoriteGame(), "Wheel");
+    }
+
+    @Test
+    public void pets_can_play() {
+        Pet felix = new Cat("Felix",4);
+        Pet fido = new Dog("Fido",5, "bone");
+        Pet rusty = new Hamster("Rusty", 1, "wheels");
+
+        Assert.assertEquals(felix.play(), "plays with string");
+        Assert.assertEquals(fido.play(), "plays with bone");
+        Assert.assertEquals(rusty.play(), "runs in wheel");
+
     }
 
 }

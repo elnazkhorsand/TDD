@@ -12,4 +12,9 @@ public class Dog extends Pet{
     public String getFavoriteToy() {
         return favoriteToy;
     }
+
+    @Override
+    public String play() {
+        return "plays with bone";
+    }
 }
