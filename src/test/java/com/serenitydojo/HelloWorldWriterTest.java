@@ -23,4 +23,16 @@ public class HelloWorldWriterTest {
         System.out.println("The first color is: " + moreColors[0]);
         System.out.println("The second color is: " + moreColors[1]);
     }
+
+    @Test
+    public void workingWithLoops(){
+        String[] colors = {"Red","Blue", "Green", "Black", "White", "Yellow", "Grey", "Purple"};
+
+        System.out.println("The colors in order are: \n");
+
+        for (int i=0; i<colors.length; i++){
+            System.out.println(colors[i]);
+        }
+
+    }
 }
