@@ -3,7 +3,9 @@ package com.serenitydojo;
 import org.junit.Test;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class HelloWorldWriterTest {
 
@@ -43,7 +45,14 @@ public class HelloWorldWriterTest {
     public void workingWithListArrayList(){
         List<String> colors = new ArrayList<>();
 
+        //Order matters and you can have duplicate values
         colors.add("Yellow");
+        colors.add("Yellow");
+        colors.add("Yellow");
+        colors.add("Yellow");
+        colors.add("Yellow");
+        colors.add("Black");
+        colors.add("Black");
         colors.add("Black");
         colors.add("White");
         colors.add("Red");
@@ -56,4 +65,32 @@ public class HelloWorldWriterTest {
             System.out.println("---- " + eachColor);
         }
     }
+
+    @Test
+    public void workingWithSetHashSet(){
+        Set<String> colors = new HashSet<>();
+
+        /*Order doesn't matters and you cannot have duplicate values
+        like the mathematical set.
+         */
+        colors.add("Yellow");
+        colors.add("Yellow");
+        colors.add("Yellow");
+        colors.add("Yellow");
+        colors.add("Yellow");
+        colors.add("Black");
+        colors.add("Black");
+        colors.add("Black");
+        colors.add("White");
+        colors.add("Red");
+        colors.add("Blue");
+        colors.add("Silver");
+        colors.add("Gold");
+
+        System.out.println("Colors in the Set are:\n");
+        for (String eachColor: colors){
+            System.out.println("---- " + eachColor);
+        }
+    }
+
 }
