@@ -2,6 +2,9 @@ package com.serenitydojo;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class HelloWorldWriterTest {
 
     @Test
@@ -34,5 +37,23 @@ public class HelloWorldWriterTest {
             System.out.println(colors[i]);
         }
 
+    }
+
+    @Test
+    public void workingWithListArrayList(){
+        List<String> colors = new ArrayList<>();
+
+        colors.add("Yellow");
+        colors.add("Black");
+        colors.add("White");
+        colors.add("Red");
+        colors.add("Blue");
+        colors.add("Silver");
+        colors.add("Gold");
+
+        System.out.println("Colors in the List are:\n");
+        for (String eachColor: colors){
+            System.out.println("---- " + eachColor);
+        }
     }
 }
