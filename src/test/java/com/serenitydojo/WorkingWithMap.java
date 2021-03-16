@@ -111,4 +111,13 @@ public class WorkingWithMap {
         System.out.println(coloredBallsNumber.keySet());
 
     }
+
+    @Test
+    public void testingMapHashMapKeySetIteration(){
+        Map<String, Integer> coloredBallsNumber = Map.of("Red", 2, "Blue", 5, "Green", 12);
+
+        for (String key: coloredBallsNumber.keySet()){
+            System.out.println(key + " => " + coloredBallsNumber.get(key));
+        }
+    }
 }
