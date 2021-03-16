@@ -120,4 +120,13 @@ public class WorkingWithMap {
             System.out.println(key + " => " + coloredBallsNumber.get(key));
         }
     }
+
+    @Test
+    public void testingMapHashMapEntrySetIteration(){
+        Map<String, Integer> coloredBallsNumber = Map.of("Red", 2,"Blue", 12, "Green", 6);
+
+        for(Map.Entry<String, Integer> entry: coloredBallsNumber.entrySet()){
+            System.out.println(entry.getKey() + " => " + entry.getValue());
+        }
+    }
 }
