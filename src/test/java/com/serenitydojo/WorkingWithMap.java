@@ -26,12 +26,14 @@ public class WorkingWithMap {
         Assertions.assertThat(peopleAge.get("Elnaz")).isEqualTo(25);
         Assertions.assertThat(peopleAge.get("Irene")).isEqualTo(24);
 
-
-
+        peopleAge.remove("Elnaz");
     }
 
     @Test
     public void testingMapHashMapMapOf(){
+
+        //Using Map.of is immutableMap and you cannot remove item from it.
+
         Map<String, Integer> peopleAge = Map.of("First", 23, "Second", 32, "Third", 40);
 
         System.out.println("The age of First is: " + peopleAge.get("First"));
@@ -41,6 +43,18 @@ public class WorkingWithMap {
         Assertions.assertThat(peopleAge.get("First")).isEqualTo(23);
         Assertions.assertThat(peopleAge.get("Second")).isEqualTo(32);
         Assertions.assertThat(peopleAge.get("Third")).isEqualTo(40);
+
+        Map<String, Integer> morePeopleAge = new HashMap<>();
+
+        morePeopleAge.put("More", 2);
+
+        morePeopleAge.putAll(peopleAge);
+
+        System.out.println("The third item of 'Second' in the 'morePeopleAge' is: " + morePeopleAge.get("Second"));
+
+        System.out.println(morePeopleAge.get("First"));
+
+
 
     }
 
