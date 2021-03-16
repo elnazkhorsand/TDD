@@ -157,6 +157,23 @@ public class WorkingWithMap {
         printMap(coloredBallsNumber);
     }
 
+    @Test
+    public void testingMapHashMapClear(){
+        Map<String, Integer> coloredBallsNumber = new HashMap<>();
+
+        System.out.println("After filling the Map:");
+        coloredBallsNumber.put("Red", 3);
+        coloredBallsNumber.put("Blue", 12);
+        coloredBallsNumber.put("Yellow", 10);
+        printMap(coloredBallsNumber);
+
+        System.out.println("After clearing the Map:");
+        coloredBallsNumber.clear();
+        printMap(coloredBallsNumber);
+
+        System.out.println("End of the test, yeyyyyy!");
+    }
+
     private void printMap(Map<String, Integer> coloredBallsNumber) {
         for(Map.Entry<String, Integer> entry: coloredBallsNumber.entrySet()){
             System.out.println(entry.getKey() + " => " + entry.getValue() + "\n");
