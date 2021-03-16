@@ -84,4 +84,21 @@ public class WorkingWithMap {
 
     }
 
+    @Test
+    public void testingMapHashMapReplace(){
+        Map<String, Integer> peopleAge = new HashMap<>();
+        peopleAge.put("Elnaz", 25);
+        peopleAge.put("Irene", 24);
+        peopleAge.put("Mom", 32);
+        peopleAge.put("Dad", 40);
+
+        //If the key exists it will replace the value of it.
+        peopleAge.replace("Elnaz", 22);
+        //If the key doesn't exist, it wont do anything.
+        peopleAge.replace("Arnika", 223);
+
+        System.out.println(peopleAge.get("Arnika"));
+        System.out.println("Elnaz is " + peopleAge.get("Elnaz") + " Years old.");
+
+    }
 }
