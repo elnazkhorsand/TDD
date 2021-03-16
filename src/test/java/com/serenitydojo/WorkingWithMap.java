@@ -72,4 +72,16 @@ public class WorkingWithMap {
         assertThat(peopleAge.containsKey("Elnaz")).isTrue();
     }
 
+    @Test
+    public void testingMapHashMapDefaultValue(){
+        Map<String, Integer> peopleAge = new HashMap<>();
+        peopleAge.put("Elnaz", 25);
+        peopleAge.put("Irene", 24);
+        peopleAge.put("Mom", 32);
+        peopleAge.put("Dad", 40);
+
+        System.out.println(peopleAge.getOrDefault("Arnika", 11));
+
+    }
+
 }
