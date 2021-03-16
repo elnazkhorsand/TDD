@@ -128,9 +128,38 @@ public class WorkingWithMap {
         printMap(coloredBallsNumber);
     }
 
+    @Test
+    public void testingMapHashMapRemove(){
+        Map<String, Integer> coloredBallsNumber = new HashMap<>();
+        System.out.println("Before filling the Map\n");
+        printMap(coloredBallsNumber);
+
+        coloredBallsNumber.put("Red", 3);
+        coloredBallsNumber.put("Blue", 5);
+        coloredBallsNumber.put("Yellow", 12);
+        System.out.println("After filling the Map\n");
+        printMap(coloredBallsNumber);
+
+        coloredBallsNumber.remove("Red");
+        System.out.println("After removing Red from the Map\n");
+        printMap(coloredBallsNumber);
+
+        coloredBallsNumber.remove("Blue");
+        System.out.println("After removing Blue from the Map\n");
+        printMap(coloredBallsNumber);
+
+        coloredBallsNumber.remove("Yellow");
+        System.out.println("After removing Yellow from the Map\n");
+        printMap(coloredBallsNumber);
+
+        coloredBallsNumber.remove("Unknown");
+        System.out.println("After removing Unknown from the Map\n");
+        printMap(coloredBallsNumber);
+    }
+
     private void printMap(Map<String, Integer> coloredBallsNumber) {
         for(Map.Entry<String, Integer> entry: coloredBallsNumber.entrySet()){
-            System.out.println(entry.getKey() + " => " + entry.getValue());
+            System.out.println(entry.getKey() + " => " + entry.getValue() + "\n");
         }
     }
 }
