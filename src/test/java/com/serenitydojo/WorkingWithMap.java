@@ -125,6 +125,10 @@ public class WorkingWithMap {
     public void testingMapHashMapEntrySetIteration(){
         Map<String, Integer> coloredBallsNumber = Map.of("Red", 2,"Blue", 12, "Green", 6);
 
+        printMap(coloredBallsNumber);
+    }
+
+    private void printMap(Map<String, Integer> coloredBallsNumber) {
         for(Map.Entry<String, Integer> entry: coloredBallsNumber.entrySet()){
             System.out.println(entry.getKey() + " => " + entry.getValue());
         }
