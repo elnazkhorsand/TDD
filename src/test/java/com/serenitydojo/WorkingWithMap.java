@@ -101,4 +101,14 @@ public class WorkingWithMap {
         System.out.println("Elnaz is " + peopleAge.get("Elnaz") + " Years old.");
 
     }
+
+    @Test
+    public void testingMapHashMapKeySet(){
+        Map<String, Integer> coloredBallsNumber = Map.of("Red", 3, "Blue", 71, "Yellow", 12);
+
+        System.out.println("The set of keys are: \n");
+
+        System.out.println(coloredBallsNumber.keySet());
+
+    }
 }
