@@ -6,6 +6,8 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 public class WorkingWithMap {
 
     @Test
@@ -21,10 +23,10 @@ public class WorkingWithMap {
         System.out.println("The age of Elnaz is: " + peopleAge.get("Elnaz"));
         System.out.println("The age of Irene is: " + peopleAge.get("Irene"));
 
-        Assertions.assertThat(peopleAge.get("Dad")).isEqualTo(40);
-        Assertions.assertThat(peopleAge.get("Mom")).isEqualTo(32);
-        Assertions.assertThat(peopleAge.get("Elnaz")).isEqualTo(25);
-        Assertions.assertThat(peopleAge.get("Irene")).isEqualTo(24);
+        assertThat(peopleAge.get("Dad")).isEqualTo(40);
+        assertThat(peopleAge.get("Mom")).isEqualTo(32);
+        assertThat(peopleAge.get("Elnaz")).isEqualTo(25);
+        assertThat(peopleAge.get("Irene")).isEqualTo(24);
 
         peopleAge.remove("Elnaz");
     }
@@ -40,9 +42,9 @@ public class WorkingWithMap {
         System.out.println("The age of Second is: " + peopleAge.get("Second"));
         System.out.println("The age of Third is: " + peopleAge.get("Third"));
 
-        Assertions.assertThat(peopleAge.get("First")).isEqualTo(23);
-        Assertions.assertThat(peopleAge.get("Second")).isEqualTo(32);
-        Assertions.assertThat(peopleAge.get("Third")).isEqualTo(40);
+        assertThat(peopleAge.get("First")).isEqualTo(23);
+        assertThat(peopleAge.get("Second")).isEqualTo(32);
+        assertThat(peopleAge.get("Third")).isEqualTo(40);
 
         Map<String, Integer> morePeopleAge = new HashMap<>();
 
@@ -53,9 +55,21 @@ public class WorkingWithMap {
         System.out.println("The third item of 'Second' in the 'morePeopleAge' is: " + morePeopleAge.get("Second"));
 
         System.out.println(morePeopleAge.get("First"));
+    }
 
+    @Test
+    public void testingMapHashMapContainsKey(){
+        Map<String, Integer> peopleAge = new HashMap<>();
+        peopleAge.put("Elnaz", 25);
+        peopleAge.put("Irene", 24);
+        peopleAge.put("Mom", 32);
+        peopleAge.put("Dad", 40);
 
+        System.out.println(peopleAge.containsKey("Arnika"));
+        System.out.println(peopleAge.containsKey("Elnaz"));
 
+        assertThat(peopleAge.containsKey("Arnika")).isFalse();
+        assertThat(peopleAge.containsKey("Elnaz")).isTrue();
     }
 
 }
