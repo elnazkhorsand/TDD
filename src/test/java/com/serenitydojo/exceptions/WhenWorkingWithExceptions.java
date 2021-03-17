@@ -45,7 +45,7 @@ public class WhenWorkingWithExceptions {
 
     }
 
-    @Test
+    @Test (expected = FileHAsNoWordException.class)
     public void shouldReportAnErrorIfFileDoesNotExist(){
 
         //When
@@ -57,7 +57,7 @@ public class WhenWorkingWithExceptions {
     }
 
     @Test
-    public void shouldReportAnErrorIfWronfFileFormat(){
+    public void shouldReportAnErrorIfWrongFileFormat(){
 
         //When
         numberOfWords = wordCounter.numberOfWordsInFile("");
@@ -65,5 +65,13 @@ public class WhenWorkingWithExceptions {
         //Then
         assertThat(numberOfWords).isEqualTo(-1);
 
+    }
+
+    @Test (expected = FileHAsNoWordException.class)
+    public void shouldThrowMeaningfulExceptionIfThereAreNoWordInFile(){
+
+        //When
+        numberOfWords = wordCounter.numberOfWordsInFile("src/main/resources/empty.txt");
+        System.out.println(numberOfWords);
     }
 }
