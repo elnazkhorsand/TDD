@@ -8,6 +8,8 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class WhenWorkingWithExceptions {
 
+    int numberOfWords;
+
     //Given
     WordCounter wordCounter = new WordCounter();
 
@@ -15,7 +17,7 @@ public class WhenWorkingWithExceptions {
     public void shouldCountNumberOfWordsInString(){
 
         //When
-        int numberOfWords = wordCounter.numberOfWordsInString("some string");
+        numberOfWords = wordCounter.numberOfWordsInString("some string");
 
         //Then
         assertThat(numberOfWords).isEqualTo(2);
@@ -25,7 +27,7 @@ public class WhenWorkingWithExceptions {
     public void shouldReturnZeroWhenStringIsEmpty(){
 
         //When
-        int numberOfWords = wordCounter.numberOfWordsInString(null);
+        numberOfWords = wordCounter.numberOfWordsInString(null);
 
         //The
         assertThat(numberOfWords).isEqualTo(0);
@@ -33,14 +35,35 @@ public class WhenWorkingWithExceptions {
     }
 
     @Test
-    public void shouldCountNumberOfWordsInFile() throws IOException {
+    public void shouldCountNumberOfWordsInFile() {
 
         //When
-        int numberOfWords = wordCounter.numberOfWordsInFile("src/main/resources/hello.txt");
+        numberOfWords = wordCounter.numberOfWordsInFile("src/main/resources/hello.txt");
 
         //Then
         assertThat(numberOfWords).isEqualTo(3);
 
     }
 
+    @Test
+    public void shouldReportAnErrorIfFileDoesNotExist(){
+
+        //When
+        numberOfWords = wordCounter.numberOfWordsInFile("FileDoesNotExist.txt");
+
+        //Then
+        assertThat(numberOfWords).isEqualTo(0);
+
+    }
+
+    @Test
+    public void shouldReportAnErrorIfWronfFileFormat(){
+
+        //When
+        numberOfWords = wordCounter.numberOfWordsInFile("");
+
+        //Then
+        assertThat(numberOfWords).isEqualTo(-1);
+
+    }
 }
