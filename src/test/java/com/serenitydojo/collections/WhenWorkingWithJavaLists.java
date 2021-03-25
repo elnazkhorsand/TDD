@@ -47,9 +47,28 @@ public class WhenWorkingWithJavaLists {
         List<String> immutableList = Arrays.asList("Mina","Mohsen","Elimo");
 
         //When try to running the following commands you will receive: UnsupportedOperationException
-//        immutableList.remove("Mina");
-//        immutableList.add("NewName");
+        //immutableList.remove("Mina");
+        //immutableList.add("NewName");
         assertThat(immutableList).contains("Mina","Mohsen","Elimo");
     }
 
+    @Test
+    public void removingItemsFromTheList(){
+        List<String> names = new ArrayList<>();
+
+        names.add("Mina");
+        names.add("Elimo");
+        names.add("Mohsen");
+
+        assertThat(names).contains("Mina","Elimo","Mohsen");
+
+        names.remove("Elimo");
+
+        assertThat(names).contains("Mina", "Mohsen");
+
+        names.clear();
+
+        assertThat(names).isEmpty();
+        assertThat(names.size()).isEqualTo(0);
+    }
 }
